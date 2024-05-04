@@ -22,7 +22,7 @@ else
 echo -e " $R please proceed with the root user "
 exit
 fi
-cp mongodbrepo /etc/yum.repos.d
+cp mongodbrepo /etc/yum.repos.d/mongo.repo &>> $logfile
 yum list installed mongodb-org -y &>> $logfile
 if [ $? -eq 0 ]
 then
