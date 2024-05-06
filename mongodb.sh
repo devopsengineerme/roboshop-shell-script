@@ -9,9 +9,9 @@ validate()
 {
     if [ $1 -eq 0 ]
     then
-    echo -e " $2 ............ $G Success "
+    echo -e " $Y $2 ............ $G Success "
     else
-    echo -e " $2 ............ $R Failed "
+    echo -e " $N $2 ............ $R Failed "
     fi
 }
 # ****************************************************
