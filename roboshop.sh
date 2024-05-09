@@ -11,8 +11,8 @@ do
     else
     instance_type="t2.micro"
     fi
-aws ec2 run-instances --image-id $AMI --instance-type $instance_type --security-group-ids $securitygroup \
- --tag-specifications "ResourceType=instance,Tags=[{Key=name,Value=$i}]"\
+IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $instance_type --security-group-ids $securitygroup \
+ --tag-specifications "ResourceType=instance,Tags=[{Key=name,Value= $i}]"\
  --query 'Reservations[*].Instances[*].[PrivateIpAddress]' \
---output text
+--output text)
 done 
