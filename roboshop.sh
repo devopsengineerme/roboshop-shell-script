@@ -18,9 +18,8 @@ IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $instance_typ
 echo " instance is $i: IP_ADDRESS is $IP_ADDRESS"
 ## CREATING ROUTE 53 records
 aws route53 change-resource-record-sets \
-  --hosted-zone-id $zoneid \
-  --change-batch '
-  {
+  --hosted-zone-id $zoneid 
+    {
     "Comment": "Creating a record set for cognito endpoint"
     ,"Changes": [{
       "Action"              : "CREATE"
@@ -33,5 +32,5 @@ aws route53 change-resource-record-sets \
         }]
       }
     }]
-  }'
+  }
   done
