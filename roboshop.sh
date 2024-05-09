@@ -15,4 +15,5 @@ IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $instance_typ
  --tag-specifications "ResourceType=instance,Tags=[{Key=name,Value= $i}]"\
  --query 'Reservations[*].Instances[*].[PrivateIpAddress]' \
 --output text)
+echo " IP_ADDRESS is $IP_ADDRESS for the instance $i"
 done 
