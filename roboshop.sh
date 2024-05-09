@@ -1,6 +1,6 @@
 #!/bin/bash
-AMIID=$1
-Securirygroup=$2
+AMIID=ami-0f3c7d07486cad139
+Securirygroup=sg-0461e1a264c88f92b
 instance=(web cart catalogue dispatch mongodb mysql rabbitmq payment redis shipping user)
 for i in "${instance[@]}"
 do
