@@ -1,6 +1,6 @@
 #!/bin/bash
-AMI-ID=$1
-Securiry-group=$2
+AMIID=$1
+Securirygroup=$2
 instance=(web cart catalogue dispatch mongodb mysql rabbitmq payment redis shipping user)
 for i in "${instance[@]}"
 do
@@ -11,6 +11,6 @@ instance-type=t2.micro
 else
 instance-type=t3.micro
 fi
-aws ec2-run instances --image-id $AMI-ID --instance-type $instance-type --count 1 --security-group-ids $security-group/
+aws ec2-run instances --image-id $AMIID --instance-type $instance-type --count 1 --security-group-ids $securitygroup/
 --key-name $instance
 done
