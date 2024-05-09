@@ -11,5 +11,5 @@ else
 instance-type="t3.small"
 fi
 aws ec2-run instances --image-id $AMIID --instance-type $instance-type --count 1 --security-group-ids $securitygroup/
---tags Key=name,Value=$i
+--tag-specifications 'ResourceType=instance,Tags=[{Key=name,Value=$i}]
 done
